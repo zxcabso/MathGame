@@ -6,8 +6,8 @@ public class Game {
     static ArrayList<String> maths = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
     static int score = 0;
-    private String name;
-    private int version;
+    private final String name;
+    private final int version;
     static {
         maths.add("2 + 2");
         maths.add("10 + 5");
@@ -35,34 +35,30 @@ public class Game {
                         String input = scanner.nextLine();
                         if(input.equalsIgnoreCase("4")) {
                             score = addScore();
-                            System.out.println(score);
                             continue;
                         } else if(input.equalsIgnoreCase("15")){
                             score = addScore();
-                            System.out.println(score);
                             continue;
                         }else if(input.equalsIgnoreCase("12")){
                             score = addScore();
-                            System.out.println(score);
                             continue;
                         }else if(input.equalsIgnoreCase("54")){
                             score = addScore();
-                            System.out.println(score);
                             continue;
-                        }else if(input.equalsIgnoreCase("32")){
+                        }else if(input.equalsIgnoreCase("32") && input == null){
                             score = addScore();
-                            System.out.println(score);
                             continue;
                         }
                         if(input.equalsIgnoreCase("выход")){
                             System.out.println("Напишите выход еще раз , что - бы выйти");
                             break;
                         } else if (input.equalsIgnoreCase("показать счет")) {
-                            System.out.println(getScore());
+                            System.out.println("твой счет составляет : " + getScore() + " очков! Продолжаем решать задачи ");
                         }
                     }
                 } else {
                     System.out.println("Неверная команда");
+                    break;
                 }
             }
         }
